@@ -2,6 +2,8 @@ import React from 'react';
 import Titles from './components/Titles';
 import Form from './components/Form';
 import Weather from './components/Weather';
+import  './App.css';
+
 
 const API_KEY = 'e68844f6d197122a260bd5fcc5974544';
 
@@ -49,8 +51,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      <Titles/>
-      <Form
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row">
+              <div className="col-xs-5 title-container">
+              <Titles/>
+              </div>
+              <div className="col-xs-7 form-container">
+                <Form
       getWeather={this.getWeather}
       />
       <Weather
@@ -62,7 +71,12 @@ class App extends React.Component {
       error={this.state.error}
 
       />
-        
+
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -70,3 +84,5 @@ class App extends React.Component {
 
 export default App;
 
+
+    
